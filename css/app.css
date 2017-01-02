@@ -175,8 +175,7 @@ ul.contact li {
 }
 
 #teaser {
-  background-image: url("../img/bg-teaser.png");
-  display: block;
+  display: none;
   position: relative;
   margin-top: 0;
   max-width: 100%;
@@ -184,6 +183,21 @@ ul.contact li {
   width: 100%;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+@media screen and (min-width: 64rem) {
+  #teaser {
+    display: block;
+  }
+}
+@media (min-resolution: 96dpi) {
+  #teaser {
+    background-image: url("../img/bg-teaser.png");
+  }
+}
+@media (min-resolution: 192dpi) {
+  #teaser {
+    background-image: url("../img/bg-teaser@2x.png");
+  }
 }
 
 #last-recipes {
@@ -222,6 +236,12 @@ ul.contact li {
   width: 150px;
 }
 
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .recipe {
   margin: 0 0;
   padding: 24px 0;
@@ -245,26 +265,65 @@ ul.contact li {
   flex-flow: column;
 }
 
+@media screen and (min-width: 38.5rem) {
+  .recipe > article {
+    flex-flow: row;
+  }
+}
 .recipe > article h3 {
   border-bottom: 1px dashed #2A2111;
 }
 .recipe > article .teaser {
   display: none;
+  flex: 1 auto;
+  order: 1;
 }
-.recipe > article .teaser {
-  display: block;
-  border-right: 4px double #e1e7da;
+@media screen and (min-width: 64rem) {
+  .recipe > article .teaser {
+    display: block;
+    border-right: 4px double #e1e7da;
+  }
 }
 .recipe > article .ingredients {
   background-color: white;
   border: 1px solid #e1e7da;
-  margin-right: 48px;
+  flex: 1 auto;
+  order: 2;
+}
+@media screen and (min-width: 38.5rem) {
+  .recipe > article .ingredients {
+    flex: 1 240px;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .recipe > article .ingredients {
+    margin-right: 48px;
+  }
+}
+@media screen and (min-width: 38.5rem) {
+  .recipe > article .ingredients {
+    order: 3;
+  }
+}
+.recipe > article .instructions {
+  flex-shrink: 50;
+  order: 3;
+}
+@media screen and (min-width: 38.5rem) {
+  .recipe > article .instructions {
+    order: 2;
+  }
 }
 
 #container {
   background: #FAFBF9;
-  width: 1240px;
-  margin: auto;
+  width: 100%;
+}
+@media screen and (min-width: 64rem) {
+  #container {
+    margin: auto;
+    width: 64rem;
+  }
 }
 
 ul.contact li {
@@ -290,7 +349,7 @@ ul.contact li {
 }
 
 #teaser {
-  display: block;
+  display: none;
   position: relative;
   margin-top: 0;
   max-width: 100%;
@@ -298,6 +357,21 @@ ul.contact li {
   width: 100%;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+@media screen and (min-width: 64rem) {
+  #teaser {
+    display: block;
+  }
+}
+@media (min-resolution: 96dpi) {
+  #teaser {
+    background-image: url("../img/bg-teaser.png");
+  }
+}
+@media (min-resolution: 192dpi) {
+  #teaser {
+    background-image: url("../img/bg-teaser@2x.png");
+  }
 }
 
 #last-recipes {
